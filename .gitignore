@@ -9,6 +9,9 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+#理由よくわからないので追加
+/UserSettings/Layouts/#理由よくわからないので追加
+/UserSettings/Layouts/default-2021.dwlt
 
 #ユーザー設定フォルダ
 UserSettings/
