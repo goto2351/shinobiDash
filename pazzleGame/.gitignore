@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@ume077 
-goto2351
-/
-pazzleGame
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-pazzleGame/.gitignore
-@ume077
-ume077 GitIgnoreにdefault-2021.dwlt（多分レイアウト設定）を無視する行を追加
-Latest commit 6034e4d 15 minutes ago
- History
- 2 contributors
-@goto2351@ume077
-63 lines (52 sloc)  1.14 KB
-
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
@@ -90,6 +61,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Footer
 © 2022 GitHub, Inc.
 Footer navigation
 Terms
@@ -103,3 +75,4 @@ API
 Training
 Blog
 About
+You have no unread notifications
