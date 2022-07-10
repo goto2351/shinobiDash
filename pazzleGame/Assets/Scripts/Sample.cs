@@ -19,5 +19,6 @@ public class Sample : MonoBehaviour
             //animator.SetBool("TestBool", true); // "Float"‚É‚Íƒpƒ‰ƒ[ƒ^–¼‚ª“ü‚è‚Ü‚·
             animator.SetTrigger("TestTrigger");
         }
+
     }
 }
