@@ -13,7 +13,7 @@ public class BlockGenerator : Config
     // ƒuƒƒbƒN‚Ì¶¬ŠÔŠu(‘å‚«‚¢‚Ù‚Ç’x‚¢)
     public int GeneratePace = 3;
 
-    private static  int generateCount;
+    private int generateCount;
     
     // Start is called before the first frame update
     void Start()
