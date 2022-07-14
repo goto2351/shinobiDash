@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockMover : Config
 {
     // ブロックの流れる速度を指定(処理内で符号は反転するため、左方向を正とする)
-    public float BlockSpeedX = 1.0f;
+    public float BlockSpeedX = 0.1f;
 
     void Start()
     {

@@ -9,6 +9,7 @@ public class BackGroundMover : Config
 
     private float width;
     private bool generateFlag;
+    private float pastPlace;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,9 @@ public class BackGroundMover : Config
         }
         //背景の横幅を取得
         width = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
+
+        // 現在位置を取得
+        pastPlace = this.gameObject.transform.position.x;
     }
 
     void FixedUpdate()
@@ -29,6 +33,12 @@ public class BackGroundMover : Config
 
         if (!generateFlag)
         {
+            float currentPlace = this.gameObject.transform.position.x;
+            // 移動距離を更新
+            Currentdistance += (pastPlace - currentPlace);
+            // 現在位置を更新
+            pastPlace = currentPlace;
+
             if (this.gameObject.transform.position.x <= 0)
             {
                 Vector3 pos = new Vector3(0.0f + this.gameObject.transform.position.x + width, 1.0f, 0.0f);

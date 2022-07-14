@@ -12,16 +12,20 @@ public class BlockGenerator : Config
     public float DefaultMaxPosY = 0.0f;
     // ブロックの生成間隔(大きいほど遅い)
     public int GeneratePace = 3;
-
+    // 開始時にこのブロックを作るか
+    public bool IsStartGenerate = false;
     private int generateCount;
     
     // Start is called before the first frame update
     void Start()
     {
-        // 初期ブロックを生成
-        for(int i = 0 ; i < 15;i++)
+        if (IsStartGenerate)
         {
-            BlockGenerate(i - 5, false);
+            // 初期ブロックを生成
+            for (int i = -5; i <= DefaultPosX; i++)
+            {
+                BlockGenerate(i, false);
+            }
         }
     }
 
