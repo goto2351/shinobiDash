@@ -41,5 +41,4 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetBool("isJumping", isJumping);
     }
-
 }

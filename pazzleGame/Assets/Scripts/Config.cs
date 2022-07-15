@@ -11,4 +11,7 @@ public class Config : MonoBehaviour
 
     // ブロックの削除される位置を指定
     public const float DestroyPositionX = -12.0f;
+
+    public static float Currentdistance = 0;
+    public static int CurrentLife = 3;
 }
