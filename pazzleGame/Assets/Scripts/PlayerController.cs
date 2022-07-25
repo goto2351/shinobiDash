@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
     [SerializeField] private float jumpForce; // ジャンプ力
+    [SerializeField] private float moveSpeed; // 移動速度
+   
 
     // 最大ジャンプ回数
     private const int MAX_JUMP_NUM = 2;
@@ -35,6 +37,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 方向キーで横移動
+        // 入力の横軸の値を取得する
+        float move_horizontal = Input.GetAxis("Horizontal");
+        // ステージの範囲内で移動する
+        Vector3 pos = gameObject.transform.position;
+        Vector3 pos_new = new Vector3(Mathf.Clamp(pos.x + move_horizontal * Time.deltaTime * moveSpeed, -11f, 11f), pos.y, 0);
+        gameObject.transform.position = pos_new;
+
         // スペースキーでジャンプ
         // 最大ジャンプ回数に達していない時ジャンプを実行する
         if (Input.GetKeyDown(KeyCode.Space) && numJump < MAX_JUMP_NUM)
@@ -50,6 +60,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KEY_ATTACK))
         {
             animator.SetTrigger("isAttacking");
+            gameObject.GetComponent<PlayerAtackController>().MakeAtackCollider();
         }
     }
 }

@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 984212004}
   - component: {fileID: 984212003}
   - component: {fileID: 984212002}
+  - component: {fileID: 984212008}
   m_Layer: 0
   m_Name: ninja
   m_TagString: Untagged
@@ -364,6 +365,7 @@ MonoBehaviour:
   rb: {fileID: 984212005}
   animator: {fileID: 984212004}
   jumpForce: 7
+  moveSpeed: 3.5
   numJump: 0
 --- !u!61 &984212003
 BoxCollider2D:
@@ -500,6 +502,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &984212008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984212001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc9a443d130db149aa6afdbd3a2c6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider_sword: {fileID: 5326711880915947292, guid: 9df6edef282729343a10b243fde9d603, type: 3}
 --- !u!1 &1391718631
 GameObject:
   m_ObjectHideFlags: 0
