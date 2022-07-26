@@ -7,6 +7,9 @@ public class EnemyTouch : Config
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        CurrentLife--;
+        if(collision.gameObject.tag == TAG_NAME_ENEMY)
+        {
+            CurrentLife--;
+        }  
     }
 }
