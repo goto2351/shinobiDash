@@ -41,9 +41,12 @@ public class PlayerController : MonoBehaviour
         // 入力の横軸の値を取得する
         float move_horizontal = Input.GetAxis("Horizontal");
         // ステージの範囲内で移動する
+        /*
         Vector3 pos = gameObject.transform.position;
         Vector3 pos_new = new Vector3(Mathf.Clamp(pos.x + move_horizontal * Time.deltaTime * moveSpeed, -11f, 11f), pos.y, 0);
         gameObject.transform.position = pos_new;
+        */
+        rb.velocity = new Vector2(move_horizontal * moveSpeed, rb.velocity.y);
 
         // スペースキーでジャンプ
         // 最大ジャンプ回数に達していない時ジャンプを実行する
