@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 596390167}
   - component: {fileID: 596390166}
   m_Layer: 0
-  m_Name: BlockGenerator
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,11 +236,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dd112c2b0866e4b8117caea06f977f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlockA: {fileID: 4139164347698275819, guid: c311680cd7b5f8b49b6ef233ebc0955c, type: 3}
+  BlockA: {fileID: 1916774322033821074, guid: ae2c31240316fab40824e70c23dfb5b8, type: 3}
   DefaultMinPosY: -4
   DefaultMaxPosY: -4
-  GeneratePace: 5
+  GeneratePace: 1
+  IsGenerateRandom: 0
+  GenerateRateMin: 1
+  GenerateRateMax: 1
+  GenerateBlocksMin: 5
+  GenerateBlocksMax: 10
+  BlockSpeedX: 0.1
   IsStartGenerate: 1
+  IsBase: 1
+  IsAir: 0
 --- !u!4 &596390167
 Transform:
   m_ObjectHideFlags: 0
@@ -495,7 +503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984212001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -3.32, z: 10}
+  m_LocalPosition: {x: -0, y: -2.69, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 0.050000004}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -719,6 +727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1570348791}
+  - component: {fileID: 1570348792}
   m_Layer: 0
   m_Name: BlockGeneratorParent
   m_TagString: Untagged
@@ -739,10 +748,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 596390167}
+  - {fileID: 1767896535}
   - {fileID: 1627419025}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570348792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570348790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b90a52c80597a4bb4fb9adfd893b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Base: {fileID: 596390165}
+  House: {fileID: 1767896533}
+  SmallBuild: {fileID: 1627419023}
+  Level1: 5
+  Level2: 10
 --- !u!1 &1594651568
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +803,15 @@ MonoBehaviour:
   DefaultMinPosY: -1
   DefaultMaxPosY: 1
   GeneratePace: 120
+  IsGenerateRandom: 0
+  GenerateRateMin: 1
+  GenerateRateMax: 1
+  GenerateBlocksMin: 1
+  GenerateBlocksMax: 1
+  BlockSpeedX: 0.1
   IsStartGenerate: 0
+  IsBase: 0
+  IsAir: 0
 --- !u!4 &1594651570
 Transform:
   m_ObjectHideFlags: 0
@@ -803,7 +838,7 @@ GameObject:
   - component: {fileID: 1627419025}
   - component: {fileID: 1627419024}
   m_Layer: 0
-  m_Name: BlockGenerator_Upper
+  m_Name: SmallBuild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,11 +856,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dd112c2b0866e4b8117caea06f977f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlockA: {fileID: 4139164347698275819, guid: c311680cd7b5f8b49b6ef233ebc0955c, type: 3}
-  DefaultMinPosY: -3
-  DefaultMaxPosY: 0
-  GeneratePace: 30
+  BlockA: {fileID: 4655919314676545441, guid: 0b80d80ba67892e46a6b2316d43ea1e5, type: 3}
+  DefaultMinPosY: -1
+  DefaultMaxPosY: -1
+  GeneratePace: 10000
+  IsGenerateRandom: 0
+  GenerateRateMin: 1
+  GenerateRateMax: 1
+  GenerateBlocksMin: 1
+  GenerateBlocksMax: 1
+  BlockSpeedX: 0.1
   IsStartGenerate: 0
+  IsBase: 0
+  IsAir: 0
 --- !u!4 &1627419025
 Transform:
   m_ObjectHideFlags: 0
@@ -839,7 +882,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1570348791}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1702268213
 GameObject:
@@ -870,7 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68d17d343a0d9a4dacd1e8984c03adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backGround: {fileID: 1960276347633470158, guid: 94da99471662e1549a37b90b53418044, type: 3}
+  backGround: {fileID: 7182775005292286091, guid: 94da99471662e1549a37b90b53418044, type: 3}
 --- !u!4 &1702268215
 Transform:
   m_ObjectHideFlags: 0
@@ -885,6 +928,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1767896533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767896535}
+  - component: {fileID: 1767896534}
+  m_Layer: 0
+  m_Name: House
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1767896534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767896533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dd112c2b0866e4b8117caea06f977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockA: {fileID: 4655919314676545441, guid: b7d809bc45689ff41b97bdc56eb54d65, type: 3}
+  DefaultMinPosY: -1
+  DefaultMaxPosY: -1
+  GeneratePace: 100
+  IsGenerateRandom: 1
+  GenerateRateMin: 5
+  GenerateRateMax: 15
+  GenerateBlocksMin: 1
+  GenerateBlocksMax: 1
+  BlockSpeedX: 0.1
+  IsStartGenerate: 0
+  IsBase: 0
+  IsAir: 0
+--- !u!4 &1767896535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767896533}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9575224, y: 0.94860363, z: -0.088045985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1570348791}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813615461
 GameObject:
@@ -1062,7 +1162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1111ca18019262d40b72a368a348202e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceScale: 0.2
   DistanceObj: {fileID: 1813615461}
   LifeObj: {fileID: 1391718631}
 --- !u!4 &2110149003

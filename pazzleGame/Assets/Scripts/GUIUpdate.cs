@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 
 public class GUIUpdate : Config
 {
-    public float DistanceScale = 1.0f;
     public GameObject DistanceObj;
     public GameObject LifeObj;
     Text distanceText;
@@ -21,7 +20,7 @@ public class GUIUpdate : Config
 
     private void FixedUpdate()
     {
-        distanceText.text = "走行距離 " + (Currentdistance * DistanceScale).ToString("f2") + "km！";
+        distanceText.text = "走行距離 " + (Currentdistance).ToString("f2") + "km！";
         lifeText.text = "残り体力：" + CurrentLife;
     }
 
