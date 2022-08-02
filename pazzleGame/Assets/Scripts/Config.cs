@@ -15,6 +15,7 @@ public class Config : MonoBehaviour
     // É^ÉO
     public const string TAG_NAME_ENEMY = "Enemy";
     public const string TAG_NAME_GROUND = "Ground";
+    public const string TAG_NAME_PLAYER = "Player";
 
     public static float Currentdistance = 0;
     public static int CurrentLife = 3;

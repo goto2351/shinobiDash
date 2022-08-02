@@ -34,7 +34,7 @@ public class PlayerAtackController : MonoBehaviour
         {
             isAttacking = true;
             Vector3 pos = gameObject.transform.position;
-            pos += new Vector3(0.5f, 0, 0);
+            pos += new Vector3(0.75f, 0, 0);
             attackCollider = (GameObject)Instantiate(collider_sword, pos, Quaternion.identity);
             attackCollider.transform.parent = gameObject.transform;
         }

@@ -351,10 +351,9 @@ GameObject:
   - component: {fileID: 984212003}
   - component: {fileID: 984212002}
   - component: {fileID: 984212008}
-  - component: {fileID: 984212009}
   m_Layer: 0
   m_Name: ninja
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +373,7 @@ MonoBehaviour:
   rb: {fileID: 984212005}
   animator: {fileID: 984212004}
   jumpForce: 7
-  moveSpeed: 3.5
+  moveSpeed: 7
   numJump: 0
 --- !u!61 &984212003
 BoxCollider2D:
@@ -503,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984212001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -2.69, z: 10}
+  m_LocalPosition: {x: -0.014, y: -2.585, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 0.050000004}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -524,18 +523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider_sword: {fileID: 5326711880915947292, guid: 9df6edef282729343a10b243fde9d603, type: 3}
---- !u!114 &984212009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984212001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f541b1ff292e6984aa988bdc73444954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1391718631
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,12 +789,12 @@ MonoBehaviour:
   BlockA: {fileID: 343611909897200511, guid: 28c49e16319a867468fb44b95588a707, type: 3}
   DefaultMinPosY: -1
   DefaultMaxPosY: 1
-  GeneratePace: 120
+  GeneratePace: 20
   IsGenerateRandom: 0
   GenerateRateMin: 1
   GenerateRateMax: 1
-  GenerateBlocksMin: 1
-  GenerateBlocksMax: 1
+  GenerateBlocksMin: 5
+  GenerateBlocksMax: 8
   BlockSpeedX: 0.1
   IsStartGenerate: 0
   IsBase: 0

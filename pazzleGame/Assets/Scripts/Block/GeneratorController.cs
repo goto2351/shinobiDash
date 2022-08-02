@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// 各GeneratorのGameObjectの変数を管理・変更するスクリプト
 public class GeneratorController : Config
 {
     public GameObject Base;
@@ -30,6 +32,7 @@ public class GeneratorController : Config
     // Update is called once per frame
     void Update()
     {
+        // 1段階目(更新処理は一回のみ)
         if (!level1Used)
         {
             if (Currentdistance >= Level1)
@@ -38,6 +41,8 @@ public class GeneratorController : Config
                 level1Used = true;
             }
         }
+
+        // 2段階目(更新処理は一回のみ)
         if (!level2Used)
         {
             if (Currentdistance >= Level2)
