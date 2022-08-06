@@ -6,6 +6,8 @@ public class BackGroundMover : Config
 {
     // ブロックの流れる速度を指定(処理内で符号は反転するため、左方向を正とする)
     public float BlockSpeedX = 1.0f;
+    // 画面表示する距離をいい感じのスケールに変換する
+    public float DistanceScale = 1.0f;
 
     private float width;
     private bool generateFlag;
@@ -35,7 +37,7 @@ public class BackGroundMover : Config
         {
             float currentPlace = this.gameObject.transform.position.x;
             // 移動距離を更新
-            Currentdistance += (pastPlace - currentPlace);
+            Currentdistance += (pastPlace - currentPlace) * DistanceScale;
             // 現在位置を更新
             pastPlace = currentPlace;
 
@@ -50,7 +52,7 @@ public class BackGroundMover : Config
         }
 
         //画面外に出た時の処理を既定
-        if (this.gameObject.transform.position.x < DestroyPositionX- width / 2)
+        if (this.gameObject.transform.position.x < DestroyPositionX - width / 2)
         {
             FlameOut(this.gameObject);
         }

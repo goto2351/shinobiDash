@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class BlockMover : Config
 {
-    // ブロックの流れる速度を指定(処理内で符号は反転するため、左方向を正とする)
-    public float BlockSpeedX = 0.1f;
+    public float BlockSpeedX { get; set; }
 
-    void Start()
-    {
-    }
     void FixedUpdate()
     {
         this.gameObject.transform.Translate(-BlockSpeedX, 0, 0);

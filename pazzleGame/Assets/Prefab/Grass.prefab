@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4139164347698275799}
   m_Layer: 0
   m_Name: Grass
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d3400777b23b54143a1b71d432f5791c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75d5b927876d272458c64791858859b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,4 +146,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48f0bc0799324a4eae1306e09cf5d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlockSpeedX: 0.2

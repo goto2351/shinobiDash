@@ -27,7 +27,7 @@ public class LandingDetector : MonoBehaviour
     {
         // 当たったのが地面の時
         // TODO: 今後"Grass"以外が出てきた場合はタグによる判定などに変更する
-        if (collision.gameObject.name.Contains("Grass"))
+        if (collision.gameObject.tag == "Ground")
         {
             // プレイヤーのジャンプ回数カウントを0にする
             player.GetComponent<PlayerController>().numJump = 0;
