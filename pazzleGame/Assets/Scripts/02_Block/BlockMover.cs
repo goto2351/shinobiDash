@@ -8,14 +8,17 @@ public class BlockMover : Config
 
     void FixedUpdate()
     {
-        this.gameObject.transform.Translate(-BlockSpeedX, 0, 0);
-
-        //画面外に出た時の処理を既定
-        if (this.gameObject.transform.position.x < DestroyPositionX)
+        // ゲームオーバー時処理を止める
+        if (!is_game_over)
         {
-            FlameOut(this.gameObject);
-        }
+            this.gameObject.transform.Translate(-BlockSpeedX, 0, 0);
 
+            //画面外に出た時の処理を既定
+            if (this.gameObject.transform.position.x < DestroyPositionX)
+            {
+                FlameOut(this.gameObject);
+            }
+        }
     }
 
     //オブジェクトが画面外に出た時の処理を規定

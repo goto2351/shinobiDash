@@ -30,31 +30,35 @@ public class BackGroundMover : Config
 
     void FixedUpdate()
     {
-        // 背景を移動
-        this.gameObject.transform.Translate(-BlockSpeedX, 0, 0);
-
-        if (!generateFlag)
+        // ゲームオーバー時処理を止める
+        if (!is_game_over)
         {
-            float currentPlace = this.gameObject.transform.position.x;
-            // 移動距離を更新
-            Currentdistance += (pastPlace - currentPlace) * DistanceScale;
-            // 現在位置を更新
-            pastPlace = currentPlace;
+            // 背景を移動
+            this.gameObject.transform.Translate(-BlockSpeedX, 0, 0);
 
-            if (this.gameObject.transform.position.x <= 0)
+            if (!generateFlag)
             {
-                Vector3 pos = new Vector3(0.0f + this.gameObject.transform.position.x + width, 1.0f, 0.0f);
-                // 生成処理
-                Instantiate(this.gameObject, pos, Quaternion.identity);
-                // 生成は一度だけ
-                generateFlag = true;
-            }
-        }
+                float currentPlace = this.gameObject.transform.position.x;
+                // 移動距離を更新
+                current_distance += (pastPlace - currentPlace) * DistanceScale;
+                // 現在位置を更新
+                pastPlace = currentPlace;
 
-        //画面外に出た時の処理を既定
-        if (this.gameObject.transform.position.x < DestroyPositionX - width / 2)
-        {
-            FlameOut(this.gameObject);
+                if (this.gameObject.transform.position.x <= 0)
+                {
+                    Vector3 pos = new Vector3(0.0f + this.gameObject.transform.position.x + width, 1.0f, 0.0f);
+                    // 生成処理
+                    Instantiate(this.gameObject, pos, Quaternion.identity);
+                    // 生成は一度だけ
+                    generateFlag = true;
+                }
+            }
+
+            //画面外に出た時の処理を既定
+            if (this.gameObject.transform.position.x < DestroyPositionX - width / 2)
+            {
+                FlameOut(this.gameObject);
+            }
         }
     }
 

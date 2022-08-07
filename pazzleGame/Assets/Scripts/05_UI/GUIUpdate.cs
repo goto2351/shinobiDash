@@ -8,6 +8,7 @@ public class GUIUpdate : Config
 {
     public GameObject DistanceObj;
     public GameObject LifeObj;
+    public GameObject GameOverObj;
     Text distanceText;
     Text lifeText;
 
@@ -18,10 +19,21 @@ public class GUIUpdate : Config
         lifeText =LifeObj.GetComponent<Text>();
     }
 
+
     private void FixedUpdate()
     {
-        distanceText.text = "走行距離 " + (Currentdistance).ToString("f2") + "km！";
-        lifeText.text = "残り体力：" + CurrentLife;
+        distanceText.text = "走行距離 " + (current_distance).ToString("f2") + "km！";
+        lifeText.text = "残り体力：" + current_life;
+    }
+    public void GameOver(float displayDelay)
+    {
+        Invoke(nameof(ShowGameOverUI), displayDelay);
+    }
+
+    private void ShowGameOverUI()
+    {
+        GameOverObj.SetActive(true);
+
     }
 
 }

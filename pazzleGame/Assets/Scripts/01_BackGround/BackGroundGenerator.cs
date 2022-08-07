@@ -17,6 +17,8 @@ public class BackGroundGenerator : Config
     // Update is called once per frame
     void Update()
     {
-        
+        // ゲームオーバー時処理を止める（処理入れるときはこの中に書くこと、今は不要なのでコメントアウト）
+        // if (!is_game_over){
+        // }
     }
 }

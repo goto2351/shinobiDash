@@ -85,30 +85,34 @@ public class BlockGenerator : Config
     // Update is called once per frame
     void FixedUpdate()
     {
-        // 定期的にブロックを生成する
-        if (paceCount >= width)
-        {
-            if (IsBase || CanConstruct || IsAir)
+        // ゲームオーバー時処理を止める
+        if (!is_game_over)
             {
-                BlockGenerate();
-                CanConstruct = IsBase;
+            // 定期的にブロックを生成する
+            if (paceCount >= width)
+            {
+                if (IsBase || can_construct || IsAir)
+                {
+                    BlockGenerate();
+                    can_construct = IsBase;
 
-                chainCount++;
-                // 連続配置が終了するか判定
-                if (chainCount >= chainMax)
-                {
-                    // カウントをリセット
-                    paceCount = 0;
-                    // ブロック連続数を再定義
-                    ResetChain();
+                    chainCount++;
+                    // 連続配置が終了するか判定
+                    if (chainCount >= chainMax)
+                    {
+                        // カウントをリセット
+                        paceCount = 0;
+                        // ブロック連続数を再定義
+                        ResetChain();
+                    }
+                    else
+                    {
+                        // カウントをリセット
+                        paceCount = 0;
+                        currentPace = 1;
+                    }
                 }
-                else
-                {
-                    // カウントをリセット
-                    paceCount = 0;
-                    currentPace = 1;
-                }      
-            }      
+            }
 
         }
         else
@@ -116,7 +120,7 @@ public class BlockGenerator : Config
             // ベースが作られていないとき上物も配置しない
             if (IsBase)
             {
-                CanConstruct = false;
+                can_construct = false;
             }
         }
 

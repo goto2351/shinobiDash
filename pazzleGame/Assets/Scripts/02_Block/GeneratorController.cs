@@ -35,7 +35,7 @@ public class GeneratorController : Config
         // 1段階目(更新処理は一回のみ)
         if (!level1Used)
         {
-            if (Currentdistance >= Level1)
+            if (current_distance >= Level1)
             {
                 baseGenerator.paceContorller(2);
                 level1Used = true;
@@ -45,7 +45,7 @@ public class GeneratorController : Config
         // 2段階目(更新処理は一回のみ)
         if (!level2Used)
         {
-            if (Currentdistance >= Level2)
+            if (current_distance >= Level2)
             {
                 baseGenerator.paceContorller(10, 3, 5, 5, 8);
                 smallBuildGenerator.paceContorller(100, 10, 20, 1, 2);
