@@ -7,7 +7,7 @@ public class Config : MonoBehaviour
     // ブロック生成位置(X座標)
     public const float DefaultPosX = 15.0f;
     // ブロック生成位置(Y座標)(基本的に初期配置に使う)
-    public const float DefaultPosY = -4.0f;
+    public const float DefaultPosY = -3.0f;
 
     // ブロックの削除される位置を指定
     public const float DestroyPositionX = -15.0f;

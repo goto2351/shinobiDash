@@ -53,7 +53,7 @@ public class PlayerController : ConfigChara
             gameObject.transform.position = pos_new;
             */
             rb.velocity = new Vector2(move_horizontal * moveSpeed, rb.velocity.y);
-
+            
             // スペースキーでジャンプ
             // 最大ジャンプ回数に達していない時ジャンプを実行する
             if (Input.GetKeyDown(KeyCode.Space) && numJump < MAX_JUMP_NUM)

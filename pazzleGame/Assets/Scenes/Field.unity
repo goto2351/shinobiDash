@@ -382,8 +382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockA: {fileID: 4139164347698275819, guid: f17186cbbaf4eee41996307a8d379c2d, type: 3}
-  DefaultMinPosY: -4
-  DefaultMaxPosY: -4
+  DefaultMinPosY: -3
+  DefaultMaxPosY: -3
   GeneratePace: 1
   IsGenerateRandom: 0
   GenerateRateMin: 1
@@ -1149,8 +1149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockA: {fileID: 4655919314676545441, guid: 0b80d80ba67892e46a6b2316d43ea1e5, type: 3}
-  DefaultMinPosY: -0.5
-  DefaultMaxPosY: -0.5
+  DefaultMinPosY: 1
+  DefaultMaxPosY: 1
   GeneratePace: 10000
   IsGenerateRandom: 0
   GenerateRateMin: 1
@@ -1284,8 +1284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockA: {fileID: 4655919314676545441, guid: b7d809bc45689ff41b97bdc56eb54d65, type: 3}
-  DefaultMinPosY: -0.5
-  DefaultMaxPosY: -0.5
+  DefaultMinPosY: 0.75
+  DefaultMaxPosY: 0.75
   GeneratePace: 100
   IsGenerateRandom: 1
   GenerateRateMin: 5
