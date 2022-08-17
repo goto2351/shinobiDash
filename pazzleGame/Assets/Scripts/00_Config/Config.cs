@@ -34,17 +34,24 @@ public class Config : MonoBehaviour
     // 現在のプレイヤー体力(0以下になるとGAMEOVER) 
     public static int current_life;
     // 建物の自動生成フラグ
-    public static bool can_construct;
+    public static float can_construct_line;
     // ゲームオーバーフラグ
     public static bool is_game_over;
+     // 最後のBaseブロックの生成位置
+     public static float last_base_block_point;
+
+    // ブロック移動速度の倍率
+    public static float block_speed_relative;
 
     // static変数の初期化
     public void Initialize()
     {
         current_distance = 0;
         current_life = 3;
-        can_construct = true;
+        can_construct_line = 0f;
         is_game_over = false;
+        last_base_block_point = 0f;
+        block_speed_relative = 1.0f;
     }
 
     // TODO 後で消す

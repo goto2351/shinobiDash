@@ -29,6 +29,7 @@ public class BlockGenerator : Config
     //このブロックが空中に配置されるものか
     public bool IsAir = false;
 
+    private float blockSpeedX;
     private float width;
     private float height;
     // 生成ペースを管理する内部カウンター
@@ -60,6 +61,9 @@ public class BlockGenerator : Config
     // Start is called before the first frame update
     void Start()
     {
+        // 相対的なブロック速度を取得
+        blockSpeedX = BlockSpeedX * block_speed_relative;
+
         //横幅を取得
         width = BlockA.GetComponent<SpriteRenderer>().bounds.size.x;
         //高さを取得
@@ -76,7 +80,7 @@ public class BlockGenerator : Config
                 generatePos += width;
             }
             // ずれを補正
-            paceCount = BlockSpeedX;
+            paceCount = blockSpeedX;
         }
         // ブロック連続数を定義
         ResetChain();
@@ -85,16 +89,35 @@ public class BlockGenerator : Config
     // Update is called once per frame
     void FixedUpdate()
     {
+        // 相対的なブロック速度を取得
+        blockSpeedX = BlockSpeedX * block_speed_relative;
         // ゲームオーバー時処理を止める
         if (!is_game_over)
             {
             // 定期的にブロックを生成する
             if (paceCount >= width)
             {
-                if (IsBase || can_construct || IsAir)
+                
+                // ベースオブジェクトである、建設可能位置にある、空中に生成されるオブジェクトである、のいずれか
+                if (IsBase || current_distance >= can_construct_line || IsAir)
                 {
-                    BlockGenerate();
-                    can_construct = IsBase;
+                    if (IsBase)
+                    {
+                        BlockGenerate(DefaultPosX - width + (current_distance - last_base_block_point));
+                        last_base_block_point = current_distance;
+                    }
+                    else
+                    {
+                        BlockGenerate();
+                    }   
+                    if (!(IsBase || IsAir))
+                    {
+                        if (current_distance >= can_construct_line)
+                        {
+                            // 次にブロック生成可能な位置を設定する
+                            can_construct_line = can_construct_line + width;
+                        }
+                    }
 
                     chainCount++;
                     // 連続配置が終了するか判定
@@ -112,28 +135,28 @@ public class BlockGenerator : Config
                         currentPace = 1;
                     }
                 }
+                else
+                {
+                    // ベースが作られていないとき上物も配置しない
+                    if (IsBase)
+                    {
+                        // 次にブロック生成可能な位置を設定する
+                        can_construct_line = Mathf.Max(can_construct_line, current_distance + width);
+                        last_base_block_point = current_distance;
+                    }
+                }
             }
-
         }
-        else
-        {
-            // ベースが作られていないとき上物も配置しない
-            if (IsBase)
-            {
-                can_construct = false;
-            }
-        }
-
 
         // 生成カウントを進める
         if (IsGenerateRandom &&  currentPace >= GenerateRateMin)
         {
             // 定義した範囲内で生成ペースを積み上げていく（上限は未満でややこしいので+1している）
-            paceCount += BlockSpeedX * Random.Range(GenerateRateMin, GenerateRateMax + 1) / currentPace;
+            paceCount += blockSpeedX * Random.Range(GenerateRateMin, GenerateRateMax + 1) / currentPace;
         }
         else
         {
-            paceCount += BlockSpeedX / currentPace;
+            paceCount += blockSpeedX / currentPace;
         }
         
     }

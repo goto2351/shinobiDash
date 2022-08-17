@@ -11,7 +11,7 @@ public class BlockMover : Config
         // ゲームオーバー時処理を止める
         if (!is_game_over)
         {
-            this.gameObject.transform.Translate(-BlockSpeedX, 0, 0);
+            this.gameObject.transform.Translate(-BlockSpeedX * block_speed_relative, 0, 0);
 
             //画面外に出た時の処理を既定
             if (this.gameObject.transform.position.x < DestroyPositionX)

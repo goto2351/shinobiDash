@@ -34,7 +34,7 @@ public class BackGroundMover : Config
         if (!is_game_over)
         {
             // ”wŒi‚ðˆÚ“®
-            this.gameObject.transform.Translate(-BlockSpeedX, 0, 0);
+            this.gameObject.transform.Translate(-BlockSpeedX * block_speed_relative, 0, 0);
 
             if (!generateFlag)
             {

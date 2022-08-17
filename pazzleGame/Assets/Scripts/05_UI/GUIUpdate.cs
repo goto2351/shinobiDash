@@ -9,6 +9,8 @@ public class GUIUpdate : Config
     public GameObject DistanceObj;
     public GameObject LifeObj;
     public GameObject GameOverObj;
+    public GameObject LevelUpObj;
+    public GameObject particleObj;
     Text distanceText;
     Text lifeText;
 
@@ -34,6 +36,28 @@ public class GUIUpdate : Config
     {
         GameOverObj.SetActive(true);
 
+    }
+
+    public void LevelUp(float displayTime, bool particleFlag = false)
+    {
+        LevelUpObj.SetActive(true);
+        particleObj.SetActive(true);
+        Invoke(nameof(HideLevelUp), displayTime);
+        if (!particleFlag)
+        {
+            Invoke(nameof(HideParticle), displayTime);
+        }
+
+    }
+
+    private void HideLevelUp()
+    {
+        LevelUpObj.SetActive(false);
+    }
+
+    private void HideParticle()
+    {
+        particleObj.SetActive(false);
     }
 
 }
