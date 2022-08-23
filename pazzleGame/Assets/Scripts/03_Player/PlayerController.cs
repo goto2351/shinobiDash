@@ -24,7 +24,7 @@ public class PlayerController : ConfigChara
     // ジャンプに対応するキー
     private const KeyCode KEY_JUMP = KeyCode.Space;
     // 攻撃に対応するキー
-    private const KeyCode KEY_ATTACK = KeyCode.A;
+    private const KeyCode KEY_ATTACK = KeyCode.F;
 
     // 前後により移動速度に掛ける係数
     private const float VELOCITY_COEFF_FORWARD = 0.5f;
@@ -48,15 +48,15 @@ public class PlayerController : ConfigChara
         if (!is_game_over)
         {
             // 方向キーで横移動
-            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
-            {
+            //if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+            //{
                 // 入力の横軸の値を取得する
                 float move_horizontal = Input.GetAxis("Horizontal");
                 // x方向に設定する速度を前後により変える
                 float velocity_x = move_horizontal * moveSpeed;
                 velocity_x = move_horizontal >= 0 ? velocity_x * VELOCITY_COEFF_FORWARD : velocity_x * VELOCITY_COEFF_BACKWARD;
                 rb.velocity = new Vector2(velocity_x, rb.velocity.y);
-            }
+            //}
 
             // スペースキーでジャンプ
             // 最大ジャンプ回数に達していない時ジャンプを実行する
