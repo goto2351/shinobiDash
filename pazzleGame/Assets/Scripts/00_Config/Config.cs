@@ -5,12 +5,15 @@ using UnityEngine;
 public class Config : MonoBehaviour
 {
     // ブロック生成位置(X座標)
-    public const float DefaultPosX = 15.0f;
+    public const float DefaultPosX = 17.0f;
     // ブロック生成位置(Y座標)(基本的に初期配置に使う)
     public const float DefaultPosY = -3.0f;
 
     // ブロックの削除される位置を指定
     public const float DestroyPositionX = -15.0f;
+
+    // 画面表示する距離をいい感じのスケールに変換する
+    public const float DistanceScale = 0.1f;
 
     // タグ
     public const string TAG_NAME_ENEMY = "Enemy";
@@ -39,7 +42,8 @@ public class Config : MonoBehaviour
     public static bool is_game_over;
      // 最後のBaseブロックの生成位置
      public static float last_base_block_point;
-
+    // Baseブロックの生成フラグ
+    public static bool is_generate_base_block;
     // ブロック移動速度の倍率
     public static float block_speed_relative;
 
@@ -51,6 +55,7 @@ public class Config : MonoBehaviour
         can_construct_line = 0f;
         is_game_over = false;
         last_base_block_point = 0f;
+        is_generate_base_block = false;
         block_speed_relative = 1.0f;
     }
 

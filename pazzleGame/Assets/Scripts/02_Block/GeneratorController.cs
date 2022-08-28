@@ -44,18 +44,18 @@ public class GeneratorController : Config
     void FixedUpdate()
     {
         // 1段階目(更新処理は一回のみ)
-        if (current_distance >= Level1 && Level1 != 0)
+        if (current_distance  >= Level1 && Level1 != 0)
         {
             baseGenerator.paceContorller(2);
             storeGenerator.paceContorller(15, 1, 2, 1, 1);
-            block_speed_relative = 1.5f;
+            block_speed_relative = (10/6);
             Level1 = 0;
             // 指定時間レベルアップを表示する
             guiUpdate.LevelUp(showLevelUpTime);
         }
 
         // 2段階目(更新処理は一回のみ)
-        if (current_distance >= Level2 && Level2 != 0)
+        if (current_distance  >= Level2 && Level2 != 0)
         {
             baseGenerator.paceContorller(100, 40, 50, 5, 15);
             smallBuildGenerator.paceContorller(100, 10, 20, 1, 2);
@@ -66,7 +66,7 @@ public class GeneratorController : Config
         }
 
         // 2段階目(更新処理は一回のみ)
-        if (current_distance >= Level3 && Level3 != 0)
+        if (current_distance  >= Level3 && Level3 != 0)
         {
             baseGenerator.paceContorller(100, 20, 30, 3, 7);
             buildingGenerator.paceContorller(100, 5, 10, 1, 1);
