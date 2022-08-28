@@ -131,7 +131,8 @@ public class BlockGenerator : Config
                         {
                             BlockGenerate();
                             // 次にブロック生成可能な位置を設定する
-                            can_construct_line = Mathf.Max(can_construct_line, current_distance + (width * DistanceScale) * block_speed_relative);
+                            can_construct_line = Mathf.Max(can_construct_line, 
+                                    current_distance + (width * DistanceScale) * block_speed_relative * 0.9f);
                             is_generate_base_block = true;
                         }
                     }
@@ -150,6 +151,7 @@ public class BlockGenerator : Config
                         // カウントをリセット
                         paceCount = 0;
                         currentPace = 1;
+                        // ベースが作られていないとき上物も配置しない
                         if (IsBase)
                         {
                             is_generate_base_block = false;
