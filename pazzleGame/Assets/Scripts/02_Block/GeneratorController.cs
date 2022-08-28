@@ -17,9 +17,10 @@ public class GeneratorController : Config
     public GameObject Store;
     public GameObject CloudA;
 
-    public int Level1;
     public int Level2;
     public int Level3;
+    public int Level4;
+    public int Level5;
 
     BlockGenerator baseGenerator;
     BlockGenerator houseGenerator;
@@ -44,36 +45,49 @@ public class GeneratorController : Config
     void FixedUpdate()
     {
         // 1段階目(更新処理は一回のみ)
-        if (current_distance  >= Level1 && Level1 != 0)
-        {
-            baseGenerator.paceContorller(2);
-            storeGenerator.paceContorller(15, 1, 2, 1, 1);
-            block_speed_relative = (10/6);
-            Level1 = 0;
-            // 指定時間レベルアップを表示する
-            guiUpdate.LevelUp(showLevelUpTime);
-        }
-
-        // 2段階目(更新処理は一回のみ)
         if (current_distance  >= Level2 && Level2 != 0)
         {
-            baseGenerator.paceContorller(100, 40, 50, 5, 15);
-            smallBuildGenerator.paceContorller(100, 10, 20, 1, 2);
-            block_speed_relative = 2f;
+            baseGenerator.paceContorller(2);
+            houseGenerator.paceContorller(100, 5, 10, 1, 3);
+            storeGenerator.paceContorller(15, 1, 2, 1, 1);
+            block_speed_relative = 1.25f;
             Level2 = 0;
             // 指定時間レベルアップを表示する
-            guiUpdate.LevelUp(showLevelUpTime);
+            guiUpdate.SpeedUp(showLevelUpTime);
         }
 
         // 2段階目(更新処理は一回のみ)
         if (current_distance  >= Level3 && Level3 != 0)
         {
-            baseGenerator.paceContorller(100, 20, 30, 3, 7);
-            buildingGenerator.paceContorller(100, 5, 10, 1, 1);
-            block_speed_relative = 2.5f;
+            baseGenerator.paceContorller(100, 40, 50, 5, 15);
+            smallBuildGenerator.paceContorller(100, 10, 20, 1, 2);
+            block_speed_relative = 1.67f;
             Level3 = 0;
             // 指定時間レベルアップを表示する
-            guiUpdate.LevelUp(showLevelUpTime, true);
+            guiUpdate.SpeedUp(showLevelUpTime);
+        }
+
+        // 2段階目(更新処理は一回のみ)
+        if (current_distance  >= Level4 && Level4 != 0)
+        {
+            baseGenerator.paceContorller(100, 30, 40, 5, 7);
+            buildingGenerator.paceContorller(100, 5, 10, 1, 1);
+            block_speed_relative = 2.0f;
+            Level4 = 0;
+            // 指定時間レベルアップを表示する
+            guiUpdate.SpeedUp(showLevelUpTime);
+        }
+
+        if (current_distance >= Level5 && Level5 != 0)
+        {
+            baseGenerator.paceContorller(100, 20, 30, 3, 7);
+            storeGenerator.paceContorller(30, 2, 3, 1, 2);
+            smallBuildGenerator.paceContorller(100, 8, 12, 1, 1);
+            buildingGenerator.paceContorller(100, 10, 20, 1, 1);
+            block_speed_relative = 2.5f;
+            Level5 = 0;
+            // 指定時間レベルアップを表示する
+            guiUpdate.SpeedUp(showLevelUpTime, true);
         }
 
     }

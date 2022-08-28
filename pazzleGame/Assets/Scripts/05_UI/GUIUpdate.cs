@@ -38,11 +38,11 @@ public class GUIUpdate : Config
 
     }
 
-    public void LevelUp(float displayTime, bool particleFlag = false)
+    public void SpeedUp(float displayTime, bool particleFlag = false)
     {
         LevelUpObj.SetActive(true);
         particleObj.SetActive(true);
-        Invoke(nameof(HideLevelUp), displayTime);
+        Invoke(nameof(HideSpeedUp), displayTime);
         if (!particleFlag)
         {
             Invoke(nameof(HideParticle), displayTime);
@@ -50,7 +50,7 @@ public class GUIUpdate : Config
 
     }
 
-    private void HideLevelUp()
+    private void HideSpeedUp()
     {
         LevelUpObj.SetActive(false);
     }

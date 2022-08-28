@@ -127,11 +127,11 @@ public class BlockGenerator : Config
                     else if (current_distance > can_construct_line)
                     {
                         // 上手く絞り込めなかったので上限追加（崖ギリギリの表示をなくすためにwidthを若干引く）
-                        if (current_distance < last_base_block_point - width * DistanceScale * 0.2)
+                        if (current_distance < last_base_block_point - width * DistanceScale * 0.1)
                         {
                             BlockGenerate();
                             // 次にブロック生成可能な位置を設定する
-                            can_construct_line = Mathf.Max(can_construct_line, current_distance + (width * DistanceScale));
+                            can_construct_line = Mathf.Max(can_construct_line, current_distance + (width * DistanceScale) * block_speed_relative);
                             is_generate_base_block = true;
                         }
                     }
