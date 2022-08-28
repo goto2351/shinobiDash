@@ -38,7 +38,7 @@ public class BackGroundMover : Config
             {
                 float currentPlace = this.gameObject.transform.position.x;
                 // 移動距離を更新
-                current_distance += (pastPlace - currentPlace);
+                current_distance += (pastPlace - currentPlace) * block_speed_relative;
                 // 現在位置を更新
                 pastPlace = currentPlace;
 
