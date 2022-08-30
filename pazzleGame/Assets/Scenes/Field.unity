@@ -6125,9 +6125,9 @@ MonoBehaviour:
   Store: {fileID: 159828554}
   CloudA: {fileID: 346789344}
   Level2: 5
-  Level3: 12
-  Level4: 25
-  Level5: 50
+  Level3: 20
+  Level4: 60
+  Level5: 200
 --- !u!1 &1594651568
 GameObject:
   m_ObjectHideFlags: 0
@@ -6217,10 +6217,10 @@ MonoBehaviour:
   BlockA: {fileID: 4655919314676545441, guid: 0b80d80ba67892e46a6b2316d43ea1e5, type: 3}
   DefaultMinPosY: -0.5
   DefaultMaxPosY: -0.5
-  GeneratePace: 10000
+  GeneratePace: 100
   IsGenerateRandom: 0
-  GenerateRateMin: 1
-  GenerateRateMax: 1
+  GenerateRateMin: 5
+  GenerateRateMax: 15
   GenerateBlocksMin: 1
   GenerateBlocksMax: 1
   BlockSpeedX: 0.1
@@ -6409,10 +6409,10 @@ MonoBehaviour:
   BlockA: {fileID: 4655919314676545441, guid: b7d809bc45689ff41b97bdc56eb54d65, type: 3}
   DefaultMinPosY: -0.5
   DefaultMaxPosY: -0.5
-  GeneratePace: 100
+  GeneratePace: 10000
   IsGenerateRandom: 1
-  GenerateRateMin: 5
-  GenerateRateMax: 15
+  GenerateRateMin: 1
+  GenerateRateMax: 1
   GenerateBlocksMin: 1
   GenerateBlocksMax: 1
   BlockSpeedX: 0.1
