@@ -5786,6 +5786,7 @@ MonoBehaviour:
   audioSource: {fileID: 1031787528}
   seJump: {fileID: 8300000, guid: 6c9e8b74576ef534ebd9212b07f8a77f, type: 3}
   seDamaged: {fileID: 8300000, guid: f5620209b0aaaaa43bf7f138bfd780b5, type: 3}
+  seAttack: {fileID: 8300000, guid: a10aedad71f94bd44b6517a57c3a3fa0, type: 3}
 --- !u!82 &1031787528
 AudioSource:
   m_ObjectHideFlags: 0
