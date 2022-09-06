@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5686795050657452885}
   - component: {fileID: 3089055451792199085}
   - component: {fileID: 979673237363469507}
+  - component: {fileID: -4683688494460068020}
   m_Layer: 0
   m_Name: enemy_bat
   m_TagString: Enemy
@@ -157,3 +158,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48f0bc0799324a4eae1306e09cf5d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4683688494460068020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709815288521632917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed6612887e7de341990ff81c1bc02bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  moveSpeed: 1
+  startDistance: 1
