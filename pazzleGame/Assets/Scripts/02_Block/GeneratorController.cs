@@ -48,7 +48,7 @@ public class GeneratorController : Config
         if (current_distance  >= Level2 && Level2 != 0)
         {
             baseGenerator.paceContorller(2);
-            houseGenerator.paceContorller(100, 5, 10, 1, 2);
+            smallBuildGenerator.paceContorller(100, 10, 20, 1, 1);
             storeGenerator.paceContorller(15, 1, 2, 1, 1);
             block_speed_relative = 1.25f;
             Level2 = 0;
@@ -60,7 +60,6 @@ public class GeneratorController : Config
         if (current_distance  >= Level3 && Level3 != 0)
         {
             baseGenerator.paceContorller(100, 40, 50, 5, 15);
-            smallBuildGenerator.paceContorller(100, 10, 20, 1, 1);
             block_speed_relative = 1.6667f;
             Level3 = 0;
             // 指定時間レベルアップを表示する
@@ -72,6 +71,7 @@ public class GeneratorController : Config
         {
             baseGenerator.paceContorller(100, 30, 40, 5, 7);
             buildingGenerator.paceContorller(100, 5, 10, 1, 1);
+            houseGenerator.paceContorller(100, 5, 10, 1, 2);
             block_speed_relative = 2.0f;
             Level4 = 0;
             // 指定時間レベルアップを表示する

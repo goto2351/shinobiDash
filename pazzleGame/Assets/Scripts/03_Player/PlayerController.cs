@@ -69,9 +69,10 @@ public class PlayerController : ConfigChara
             // ジャンプ状態をAnimatorと同期する(ジャンプ回数>=1のときジャンプ中)
             animator.SetBool("isJumping", numJump >= 1);
 
-            // Aキー(仮)で攻撃
+            // Fキー(仮)で攻撃
             if (Input.GetKeyDown(KEY_ATTACK))
             {
+                se.SEAttack();
                 animator.SetTrigger("isAttacking");
                 gameObject.GetComponent<PlayerAtackController>().MakeAtackCollider();
             }
