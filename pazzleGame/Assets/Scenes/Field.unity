@@ -6139,6 +6139,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1594651570}
   - component: {fileID: 1594651569}
+  - component: {fileID: 1594651572}
+  - component: {fileID: 1594651571}
   m_Layer: 0
   m_Name: EnemyGenerator
   m_TagString: Untagged
@@ -6186,6 +6188,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1594651571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594651568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dd112c2b0866e4b8117caea06f977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockA: {fileID: 7174426611789776475, guid: b09129c16b9f0394e910df60f7a24450, type: 3}
+  DefaultMinPosY: -1
+  DefaultMaxPosY: 1
+  GeneratePace: 40
+  IsGenerateRandom: 0
+  GenerateRateMin: 1
+  GenerateRateMax: 3
+  GenerateBlocksMin: 1
+  GenerateBlocksMax: 2
+  BlockSpeedX: 0.1
+  IsStartGenerate: 0
+  IsBase: 0
+  IsAir: 1
+--- !u!114 &1594651572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594651568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dd112c2b0866e4b8117caea06f977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockA: {fileID: 1709815288521632917, guid: 1c43ef5224cef2f4193cb64d786d47f8, type: 3}
+  DefaultMinPosY: -1
+  DefaultMaxPosY: 1
+  GeneratePace: 50
+  IsGenerateRandom: 0
+  GenerateRateMin: 1
+  GenerateRateMax: 3
+  GenerateBlocksMin: 1
+  GenerateBlocksMax: 2
+  BlockSpeedX: 0.1
+  IsStartGenerate: 0
+  IsBase: 0
+  IsAir: 1
 --- !u!1 &1627419023
 GameObject:
   m_ObjectHideFlags: 0
