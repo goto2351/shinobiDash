@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class PlayerAttackColliderController : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,9 @@ public class PlayerAttackColliderController : MonoBehaviour
     {
         if (collision.gameObject.transform.tag == "Enemy")
         {
+            // SEを鳴らす
+            GameObject.Find("SE_MNG").GetComponent<SEMNG>().SEAttackHit();
+            // 敵オブジェクトを消滅させる
             Destroy(collision.gameObject);
         }
     }

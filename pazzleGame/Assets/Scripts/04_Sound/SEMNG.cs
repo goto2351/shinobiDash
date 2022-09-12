@@ -12,6 +12,8 @@ public class SEMNG : MonoBehaviour
     [SerializeField] private AudioClip seDamaged;
     // プレイヤーの攻撃音
     [SerializeField] private AudioClip seAttack;
+    // 攻撃がヒットしたときのSE
+    [SerializeField] private AudioClip seAttackHit;
 
     // ジャンプ音を再生する
     public void SEJump()
@@ -29,5 +31,11 @@ public class SEMNG : MonoBehaviour
     public void SEAttack()
     {
         audioSource.PlayOneShot(seAttack);
+    }
+
+    // 攻撃がヒットしたときのSEを再生する
+    public void SEAttackHit()
+    {
+        audioSource.PlayOneShot(seAttackHit);
     }
 }
