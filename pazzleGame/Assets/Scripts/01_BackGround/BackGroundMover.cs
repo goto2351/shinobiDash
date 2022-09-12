@@ -6,6 +6,7 @@ public class BackGroundMover : Config
 {
     // ブロックの流れる速度を指定(処理内で符号は反転するため、左方向を正とする)
     public float BlockSpeedX = 1.0f;
+    public bool IsField; 
 
     private float width;
     private bool generateFlag;
@@ -36,19 +37,22 @@ public class BackGroundMover : Config
 
             if (!generateFlag)
             {
-                float currentPlace = this.gameObject.transform.position.x;
-                // 移動距離を更新
-                current_distance += (pastPlace - currentPlace) * block_speed_relative;
-                // 現在位置を更新
-                pastPlace = currentPlace;
-
-                if (this.gameObject.transform.position.x <= 0)
+                if (IsField)
                 {
-                    Vector3 pos = new Vector3(0.0f + this.gameObject.transform.position.x + width, 1.0f, 0.0f);
-                    // 生成処理
-                    Instantiate(this.gameObject, pos, Quaternion.identity);
-                    // 生成は一度だけ
-                    generateFlag = true;
+                    float currentPlace = this.gameObject.transform.position.x;
+                    // 移動距離を更新
+                    current_distance += (pastPlace - currentPlace) * block_speed_relative;
+                    // 現在位置を更新
+                    pastPlace = currentPlace;
+
+                    if (this.gameObject.transform.position.x <= 0)
+                    {
+                        Vector3 pos = new Vector3(0.0f + this.gameObject.transform.position.x + width, 1.0f, 0.0f);
+                        // 生成処理
+                        Instantiate(this.gameObject, pos, Quaternion.identity);
+                        // 生成は一度だけ
+                        generateFlag = true;
+                    }
                 }
             }
 

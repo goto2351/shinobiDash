@@ -12,8 +12,8 @@ public class Config : MonoBehaviour
     // ブロックの削除される位置を指定
     public const float DestroyPositionX = -15.0f;
 
-    // 画面表示する距離をいい感じのスケールに変換する
-    public const float DistanceScale = 0.1f;
+    // 画面表示するブロックををいい感じのスケールに変換する
+    public const float BlockScale = 0.1f;
 
     // タグ
     public const string TAG_NAME_ENEMY = "Enemy";
@@ -58,11 +58,4 @@ public class Config : MonoBehaviour
         is_generate_base_block = false;
         block_speed_relative = 1.0f;
     }
-
-    // TODO 後で消す
-    public void log(string s)
-    {
-        Debug.Log(s);
-    }
-
 }

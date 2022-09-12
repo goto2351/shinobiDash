@@ -17,6 +17,9 @@ public class PlayerController : ConfigChara
     [SerializeField] private Animator animator;
     [SerializeField] private float jumpForce; // ジャンプ力
     [SerializeField] private float moveSpeed; // 移動速度
+                                              // 操作を受け付けるか
+    [SerializeField] private bool isMoveable; // 移動速度
+
 
     // 最大ジャンプ回数
     private const int MAX_JUMP_NUM = 2;
@@ -45,7 +48,7 @@ public class PlayerController : ConfigChara
     void Update()
     {
         // ゲームオーバー時処理を止める
-        if (!is_game_over)
+        if (!is_game_over && isMoveable)
         {
             // 方向キーで横移動
             //if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))

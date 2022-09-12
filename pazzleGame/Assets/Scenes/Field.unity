@@ -5575,6 +5575,7 @@ MonoBehaviour:
   animator: {fileID: 984212004}
   jumpForce: 7
   moveSpeed: 7
+  isMoveable: 1
   numJump: 2
 --- !u!61 &984212003
 BoxCollider2D:
