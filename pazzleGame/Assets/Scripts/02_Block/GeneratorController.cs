@@ -17,6 +17,10 @@ public class GeneratorController : Config
     public GameObject Store;
     public GameObject CloudA;
 
+    public GameObject EnemyGhost;
+    public GameObject EnemyBat;
+    public GameObject EnemyFire;
+
     public int Level2;
     public int Level3;
     public int Level4;
@@ -29,6 +33,10 @@ public class GeneratorController : Config
     BlockGenerator storeGenerator;
     BlockGenerator cloudAGenerator;
 
+    BlockGenerator ghostGenerator;
+    BlockGenerator batGenerator;
+    BlockGenerator fireGenerator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +46,9 @@ public class GeneratorController : Config
         buildingGenerator = Building.GetComponent<BlockGenerator>();
         storeGenerator = Store.GetComponent<BlockGenerator>();
         cloudAGenerator = CloudA.GetComponent<BlockGenerator>();
+        ghostGenerator = EnemyGhost.GetComponent<BlockGenerator>();
+        batGenerator = EnemyBat.GetComponent<BlockGenerator>();
+        fireGenerator = EnemyFire.GetComponent<BlockGenerator>();
 
     }
 
@@ -60,6 +71,7 @@ public class GeneratorController : Config
         if (current_distance  >= Level3 && Level3 != 0)
         {
             baseGenerator.paceContorller(100, 40, 50, 5, 15);
+            fireGenerator.paceContorller(60, 1, 3, 1, 2);
             block_speed_relative = 1.6667f;
             Level3 = 0;
             // 指定時間レベルアップを表示する
@@ -73,6 +85,7 @@ public class GeneratorController : Config
             buildingGenerator.paceContorller(100, 5, 10, 1, 1);
             houseGenerator.paceContorller(100, 5, 10, 1, 2);
             block_speed_relative = 2.0f;
+            batGenerator.paceContorller(100, 1, 3, 1, 2);
             Level4 = 0;
             // 指定時間レベルアップを表示する
             guiUpdate.SpeedUp(showSpeedUpTime);

@@ -56,6 +56,7 @@ public class BGMMNG : MonoBehaviour
 
         _bgm_state = BGM_STATE.WAIT;
         _state_work = BGM_STATE.WAIT;
+
     }
 
     // 実行中の処理
