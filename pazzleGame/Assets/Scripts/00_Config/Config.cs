@@ -18,6 +18,7 @@ public class Config : MonoBehaviour
     // タグ
     public const string TAG_NAME_ENEMY = "Enemy";
     public const string TAG_NAME_GROUND = "Ground";
+    public const string TAG_NAME_HEART = "Heart";
     public const string TAG_NAME_PLAYER = "Player";
 
     // シーン名

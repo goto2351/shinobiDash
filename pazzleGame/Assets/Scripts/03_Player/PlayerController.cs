@@ -77,6 +77,7 @@ public class PlayerController : ConfigChara
             {
                 se.SEAttack();
                 animator.SetTrigger("isAttacking");
+                animator.GetBool("isAttacking");
                 gameObject.GetComponent<PlayerAtackController>().MakeAtackCollider();
             }
         }

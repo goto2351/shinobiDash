@@ -21,6 +21,8 @@ public class GeneratorController : Config
     public GameObject EnemyBat;
     public GameObject EnemyFire;
 
+    public GameObject Heart;
+
     public int Level2;
     public int Level3;
     public int Level4;
@@ -37,6 +39,8 @@ public class GeneratorController : Config
     BlockGenerator batGenerator;
     BlockGenerator fireGenerator;
 
+    BlockGenerator HeartGenerator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +53,7 @@ public class GeneratorController : Config
         ghostGenerator = EnemyGhost.GetComponent<BlockGenerator>();
         batGenerator = EnemyBat.GetComponent<BlockGenerator>();
         fireGenerator = EnemyFire.GetComponent<BlockGenerator>();
+        HeartGenerator = Heart.GetComponent<BlockGenerator>();
 
     }
 

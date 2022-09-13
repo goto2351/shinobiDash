@@ -72,7 +72,13 @@ public class EnemyTouch : ConfigChara
                 // 一定時間後に再度ダメージ判定を有効化
                 Invoke(nameof(CancelMuteki),MutekiTime);
             }
-        }  
+        }
+        else if(collision.gameObject.tag == TAG_NAME_HEART)
+        {
+            se.SEHeal();
+            // PLのライフ回復
+            current_life++;
+        }
     }
 
     void CancelMuteki()
