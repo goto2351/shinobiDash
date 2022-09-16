@@ -54,6 +54,12 @@ public class BlockGenerator : Config
 
         ResetChain();
     }
+
+    //pace…生成間隔
+    //rateMin…単位時間あたりに加算される生成までの値の最小値
+    //rateMax…単位時間あたりに加算される生成までの値の最大値
+    //blocksMin…生成一回あたりに生成される最小オブジェクト数
+    //blocksMax…生成一回あたりに生成される最大オブジェクト数
     public void paceContorller(float pace, int rateMin, int rateMax, int blocksMin, int blocksMax)
     {
         GeneratePace = pace;
@@ -110,13 +116,13 @@ public class BlockGenerator : Config
                 
                 // ベースオブジェクトである、建設可能位置にある、空中に生成されるオブジェクトである、のいずれか
                 if (IsBase ||
-                    (current_distance >= can_construct_line && current_distance < last_base_block_point - width * DistanceScale * 0.2) ||
+                    (current_distance >= can_construct_line && current_distance < last_base_block_point - width * BlockScale * 0.2) ||
                     IsAir)
                 {
                     if (IsBase)
                     {
                         BlockGenerate();
-                        last_base_block_point = current_distance + (width * DistanceScale);
+                        last_base_block_point = current_distance + (width * BlockScale);
                         can_construct_line = Mathf.Max(can_construct_line, current_distance);
                         skipBase = 0;
                     }
@@ -127,12 +133,12 @@ public class BlockGenerator : Config
                     else if (current_distance > can_construct_line)
                     {
                         // 上手く絞り込めなかったので上限追加（崖ギリギリの表示をなくすためにwidthを若干引く）
-                        if (current_distance < last_base_block_point - width * DistanceScale * 0.1)
+                        if (current_distance < last_base_block_point - width * BlockScale * 0.1)
                         {
                             BlockGenerate();
                             // 次にブロック生成可能な位置を設定する
                             can_construct_line = Mathf.Max(can_construct_line, 
-                                    current_distance + (width * DistanceScale) * block_speed_relative * 0.9f);
+                                    current_distance + (width * BlockScale) * block_speed_relative * 0.9f);
                             is_generate_base_block = true;
                         }
                     }
@@ -164,11 +170,11 @@ public class BlockGenerator : Config
             // ベースが作られていないとき上物も配置しない
             if (IsBase)
             {
-                if (current_distance >= last_base_block_point + (width * DistanceScale * skipBase))
+                if (current_distance >= last_base_block_point + (width * BlockScale * skipBase))
                 {
                     skipBase++;
                     // 次にブロック生成可能な位置を設定する
-                    can_construct_line = Mathf.Max(can_construct_line, last_base_block_point + (width * DistanceScale * skipBase));
+                    can_construct_line = Mathf.Max(can_construct_line, last_base_block_point + (width * BlockScale * skipBase));
 
                 }
 
