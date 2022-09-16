@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDestroy : Config
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // プレイヤーとぶつかった場合、オブジェクトを消滅させる
         if (collision.gameObject.tag == TAG_NAME_PLAYER)

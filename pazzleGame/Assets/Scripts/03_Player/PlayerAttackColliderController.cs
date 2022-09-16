@@ -19,7 +19,7 @@ public class PlayerAttackColliderController : MonoBehaviour
     }
 
     // “G‚ÉUŒ‚‚ª“–‚½‚Á‚½‚ÌÁ–Åˆ—
-    public  void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.transform.tag == "Enemy")
         {

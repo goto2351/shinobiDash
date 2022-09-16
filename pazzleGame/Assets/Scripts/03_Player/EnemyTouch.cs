@@ -56,11 +56,11 @@ public class EnemyTouch : ConfigChara
         isVisible = false;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == TAG_NAME_ENEMY)
+        if (collision.gameObject.tag == TAG_NAME_ENEMY)
         {
-            if (!IsDamaged) 
+            if (!IsDamaged)
             {
                 IsDamaged = true;
                 // SE再生
@@ -70,10 +70,10 @@ public class EnemyTouch : ConfigChara
                 // 点滅を開始する(非表示にする)
                 MakeInvisible();
                 // 一定時間後に再度ダメージ判定を有効化
-                Invoke(nameof(CancelMuteki),MutekiTime);
+                Invoke(nameof(CancelMuteki), MutekiTime);
             }
         }
-        else if(collision.gameObject.tag == TAG_NAME_HEART)
+        else if (collision.gameObject.tag == TAG_NAME_HEART)
         {
             se.SEHeal();
             // PLのライフ回復
