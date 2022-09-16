@@ -155,7 +155,7 @@ MonoBehaviour:
   BlockA: {fileID: 4139164347698275819, guid: ceb967670d9a7ac44ba0ce92c0640b13, type: 3}
   DefaultMinPosY: 0
   DefaultMaxPosY: 3
-  GeneratePace: 300
+  GeneratePace: 600
   IsGenerateRandom: 1
   GenerateRateMin: 1
   GenerateRateMax: 10
