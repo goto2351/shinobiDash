@@ -5648,7 +5648,7 @@ MonoBehaviour:
   se: {fileID: 1031787527}
   rb: {fileID: 984212005}
   animator: {fileID: 984212004}
-  jumpForce: 7
+  jumpForce: 7.7
   moveSpeed: 7
   isMoveable: 1
   numJump: 2
@@ -6267,7 +6267,7 @@ MonoBehaviour:
   Level2: 5
   Level3: 20
   Level4: 60
-  Level5: 200
+  Level5: 150
 --- !u!1 &1594651568
 GameObject:
   m_ObjectHideFlags: 0
@@ -6300,7 +6300,7 @@ MonoBehaviour:
   BlockA: {fileID: 343611909897200511, guid: 28c49e16319a867468fb44b95588a707, type: 3}
   DefaultMinPosY: -1
   DefaultMaxPosY: 2
-  GeneratePace: 80
+  GeneratePace: 100
   IsGenerateRandom: 1
   GenerateRateMin: 1
   GenerateRateMax: 5
