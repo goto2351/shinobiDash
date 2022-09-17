@@ -59,4 +59,5 @@ public class Config : MonoBehaviour
         is_generate_base_block = false;
         block_speed_relative = 1.0f;
     }
+
 }

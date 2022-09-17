@@ -61,9 +61,13 @@ public class PlayerController : ConfigChara
                 rb.velocity = new Vector2(velocity_x, rb.velocity.y);
             //}
 
-            // スペースキーでジャンプ
+            // スペースキー、Wキー、上でジャンプ
+            bool jumpKey = (Input.GetKeyDown(KeyCode.Space) ||
+                            Input.GetKeyDown(KeyCode.W) ||
+                            Input.GetKeyDown(KeyCode.UpArrow));
+
             // 最大ジャンプ回数に達していない時ジャンプを実行する
-            if (Input.GetKeyDown(KeyCode.Space) && numJump < MAX_JUMP_NUM)
+            if (jumpKey && numJump < MAX_JUMP_NUM)
             {
                 se.SEJump();
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -81,17 +85,30 @@ public class PlayerController : ConfigChara
             // Fキー(仮)で攻撃
             if (Input.GetKeyDown(KEY_ATTACK))
             {
-                se.SEAttack();
-                animator.SetTrigger("isAttacking");
-                animator.GetBool("isAttacking");
-                gameObject.GetComponent<PlayerAtackController>().MakeAtackCollider();
+                if (!IsAttacked)
+                {
+                    IsAttacked = true;
+                    se.SEAttack();
+                    animator.SetTrigger("isAttacking");
+                    animator.GetBool("isAttacking");
+                    gameObject.GetComponent<PlayerAtackController>().MakeAtackCollider();
+
+                    // 一定時間後に再攻撃可能に
+                    Invoke(nameof(CancelAttacked), AttackedTime);
+                }
+
             }
         }
-
         // 画面外に遷移時ゲームオーバーとする
         if (this.gameObject.transform.position.y < GameOverLineY)
         {
             is_game_over = true;
         }
+    }
+
+    // 攻撃判定を再有効可
+    void CancelAttacked()
+    {
+        IsAttacked = false;
     }
 }
