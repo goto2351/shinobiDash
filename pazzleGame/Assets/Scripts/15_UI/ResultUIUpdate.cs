@@ -38,47 +38,47 @@ public class ResultUIUpdate : Config
         // •iì6.8km
         else if (current_distance < 17.0f)
         {
-            ret = "•iì‰w";
+            ret = "•iì‰w(–ñ7km)";
         }
         // ƒfƒBƒYƒj[ƒ‰ƒ“ƒh17km
         else if (current_distance < 30.0f)
         {
-            ret = "ƒfƒBƒYƒj[ƒ‰ƒ“ƒh";
+            ret = "ƒfƒBƒYƒj[ƒ‰ƒ“ƒh(–ñ17km)";
         }
         //‰¡•l30km
         else if (current_distance < 60.0f)
         {
-            ret = "‰¡•l";
+            ret = "‰¡•l(–ñ30km)";
         }
         //‚Â‚­‚Î60km
         else if (current_distance < 105.0f)
         {
-            ret = "‚Â‚­‚Î";
+            ret = "‚Â‚­‚Î(–ñ60km)";
         }
         //”MŠC105km
         else if (current_distance < 180.0f)
         {
-            ret = "”MŠC";
+            ret = "”MŠC(–ñ105km)";
         }
         //Ã‰ª180km
         else if (current_distance < 260.0f)
         {
-            ret = "Ã‰ª";
+            ret = "Ã‰ª(–ñ180km)";
         }
         //•l¼260km
         else if (current_distance < 360.0f)
         {
-            ret = "•l¼";
+            ret = "•l¼(–ñ260km)";
         }
         //–¼ŒÃ‰®360km
         else if (current_distance < 500.0f)
         {
-            ret = "–¼ŒÃ‰®";
+            ret = "–¼ŒÃ‰®(–ñ360km)";
         }
         //‹“s500km
         else
         {
-            ret = "‹“s“’…I“ŒŠC“¹‘–”j‚¨‚ß‚Å‚Æ‚¤I";
+            ret = "‹“s“’…I(–ñ500km) “ŒŠC“¹‘–”j‚¨‚ß‚Å‚Æ‚¤I";
         }
 
         if (current_distance < 500.0f)

@@ -6,6 +6,9 @@ using System.Text.RegularExpressions;
 
 public class GUIUpdate : Config
 {
+    // å¯â âπçƒê∂óp
+    public SEMNG se;
+
     public GameObject DistanceObj;
     public GameObject LifeObj;
     public GameObject GameOverObj;
@@ -43,6 +46,8 @@ public class GUIUpdate : Config
         LevelUpObj.SetActive(true);
         particleObj.SetActive(true);
         Invoke(nameof(HideSpeedUp), displayTime);
+        se.SESpeedUp();
+
         if (!particleFlag)
         {
             Invoke(nameof(HideParticle), displayTime);

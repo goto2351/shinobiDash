@@ -66,7 +66,10 @@ public class GeneratorController : Config
             baseGenerator.paceContorller(2);
             smallBuildGenerator.paceContorller(100, 10, 20, 1, 1);
             storeGenerator.paceContorller(15, 1, 2, 1, 1);
+            cloudAGenerator.paceContorller(40, 1, 2, 1, 2);
             block_speed_relative = 1.25f;
+            // ゴーストの出現頻度微増
+            ghostGenerator.paceContorller(120, 1, 5, 1, 2);
             Level2 = 0;
             // 指定時間レベルアップを表示する
             guiUpdate.SpeedUp(showSpeedUpTime);
@@ -88,11 +91,16 @@ public class GeneratorController : Config
         if (current_distance  >= Level4 && Level4 != 0)
         {
             baseGenerator.paceContorller(100, 30, 40, 5, 7);
-            buildingGenerator.paceContorller(100, 5, 10, 1, 1);
+            buildingGenerator.paceContorller(200, 5, 10, 1, 1);
             houseGenerator.paceContorller(100, 5, 10, 1, 2);
+            cloudAGenerator.paceContorller(30, 1, 2, 1, 3);
             block_speed_relative = 2.0f;
+            // ゴーストの出現頻度微増
+            ghostGenerator.paceContorller(100, 1, 5, 1, 3);
             // 自機狙いのコウモリが出現するようになる
             batGenerator.paceContorller(150, 1, 3, 1, 1);
+            // ハートの出現頻度をアップ
+            HeartGenerator.paceContorller(600, 1, 3, 1, 1);
             Level4 = 0;
             // 指定時間レベルアップを表示する
             guiUpdate.SpeedUp(showSpeedUpTime);
@@ -102,11 +110,13 @@ public class GeneratorController : Config
         if (current_distance >= Level5 && Level5 != 0)
         {
             baseGenerator.paceContorller(100, 20, 30, 3, 7);
-            storeGenerator.paceContorller(30, 2, 3, 1, 3);
-            smallBuildGenerator.paceContorller(100, 8, 12, 1, 1);
+            houseGenerator.paceContorller(100, 5, 10, 1, 2);
+            storeGenerator.paceContorller(100, 2, 3, 1, 3);
+            smallBuildGenerator.paceContorller(300, 8, 12, 1, 1);
             buildingGenerator.paceContorller(100, 10, 20, 1, 1);
 
             // 敵の出現頻度上昇
+            ghostGenerator.paceContorller(100, 1, 5, 1, 4);
             fireGenerator.paceContorller(60, 1, 3, 1, 1);
             batGenerator.paceContorller(135, 1, 3, 1, 2);
             block_speed_relative = 2.5f;

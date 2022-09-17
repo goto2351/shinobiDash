@@ -3,7 +3,14 @@ guid: c666d95d14b3c4f41aa5e86d128ac902
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - seJump: {instanceID: 0}
+  - seDamaged: {instanceID: 0}
+  - seAttack: {instanceID: 0}
+  - seAttackHit: {instanceID: 0}
+  - seSpeedUp: {instanceID: 0}
+  - seHeal: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

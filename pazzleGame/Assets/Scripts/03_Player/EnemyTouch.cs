@@ -75,14 +75,30 @@ public class EnemyTouch : ConfigChara
         }
         else if (collision.gameObject.tag == TAG_NAME_HEART)
         {
-            se.SEHeal();
-            // PLのライフ回復
-            current_life++;
+            // 重複回復を防ぐためのフラグチェック
+            if (!IsHealed)
+            {
+                IsHealed = true;
+                // SE再生
+                se.SEHeal();
+                // PLのライフ回復
+                current_life++;
+                // 一定時間後に再度回復判定を有効化
+                Invoke(nameof(CancelHealed), HealedTime);
+            }
+
         }
     }
 
+    // 当たり判定を再有効可
     void CancelMuteki()
     {
         IsDamaged = false;
+    }
+
+    // 回復判定を再有効可
+    void CancelHealed()
+    {
+        IsHealed = false;
     }
 }

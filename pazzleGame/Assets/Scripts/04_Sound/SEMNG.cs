@@ -14,6 +14,8 @@ public class SEMNG : MonoBehaviour
     [SerializeField] private AudioClip seAttack;
     // 攻撃がヒットしたときのSE
     [SerializeField] private AudioClip seAttackHit;
+    // スピードアップののSE
+    [SerializeField] private AudioClip seSpeedUp;
     // 回復した時のSE
     [SerializeField] private AudioClip seHeal;
 
@@ -39,6 +41,12 @@ public class SEMNG : MonoBehaviour
     public void SEAttackHit()
     {
         audioSource.PlayOneShot(seAttackHit);
+    }
+
+    // 回復したときのSEを再生する
+    public void SESpeedUp()
+    {
+        audioSource.PlayOneShot(seSpeedUp);
     }
 
     // 回復したときのSEを再生する

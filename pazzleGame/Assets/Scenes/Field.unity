@@ -155,7 +155,7 @@ MonoBehaviour:
   BlockA: {fileID: 4139164347698275819, guid: ceb967670d9a7ac44ba0ce92c0640b13, type: 3}
   DefaultMinPosY: 0
   DefaultMaxPosY: 3
-  GeneratePace: 300
+  GeneratePace: 1000
   IsGenerateRandom: 1
   GenerateRateMin: 1
   GenerateRateMax: 10
@@ -5131,12 +5131,12 @@ MonoBehaviour:
   BlockA: {fileID: 4213260476823038143, guid: a31011d03c328554ab6b225a8814224c, type: 3}
   DefaultMinPosY: 3
   DefaultMaxPosY: 5
-  GeneratePace: 30
+  GeneratePace: 100
   IsGenerateRandom: 1
   GenerateRateMin: 1
   GenerateRateMax: 2
   GenerateBlocksMin: 1
-  GenerateBlocksMax: 3
+  GenerateBlocksMax: 1
   BlockSpeedX: 0.1
   IsStartGenerate: 0
   IsBase: 0
@@ -5864,6 +5864,7 @@ MonoBehaviour:
   seDamaged: {fileID: 8300000, guid: f5620209b0aaaaa43bf7f138bfd780b5, type: 3}
   seAttack: {fileID: 8300000, guid: a10aedad71f94bd44b6517a57c3a3fa0, type: 3}
   seAttackHit: {fileID: 8300000, guid: aa2b0187cc3f645488870aa363a4ee3d, type: 3}
+  seSpeedUp: {fileID: 8300000, guid: ef60a7c50ab0e4a43a15fff5a4d07e4a, type: 3}
   seHeal: {fileID: 8300000, guid: b2e92dc4ab3a4be48b95725eb38664d7, type: 3}
 --- !u!82 &1031787528
 AudioSource:
@@ -5993,12 +5994,12 @@ MonoBehaviour:
   BlockA: {fileID: 7174426611789776475, guid: b09129c16b9f0394e910df60f7a24450, type: 3}
   DefaultMinPosY: -1
   DefaultMaxPosY: 1
-  GeneratePace: 200
+  GeneratePace: 400
   IsGenerateRandom: 1
   GenerateRateMin: 1
   GenerateRateMax: 3
   GenerateBlocksMin: 1
-  GenerateBlocksMax: 2
+  GenerateBlocksMax: 1
   BlockSpeedX: 0.1
   IsStartGenerate: 0
   IsBase: 0
@@ -6303,9 +6304,9 @@ MonoBehaviour:
   GeneratePace: 100
   IsGenerateRandom: 1
   GenerateRateMin: 1
-  GenerateRateMax: 5
+  GenerateRateMax: 4
   GenerateBlocksMin: 1
-  GenerateBlocksMax: 2
+  GenerateBlocksMax: 1
   BlockSpeedX: 0.15
   IsStartGenerate: 0
   IsBase: 0
@@ -6808,6 +6809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1111ca18019262d40b72a368a348202e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  se: {fileID: 1031787527}
   DistanceObj: {fileID: 1813615461}
   LifeObj: {fileID: 1391718631}
   GameOverObj: {fileID: 2116753153}
