@@ -72,6 +72,12 @@ public class PlayerController : ConfigChara
             // ジャンプ状態をAnimatorと同期する(ジャンプ回数>=1のときジャンプ中)
             animator.SetBool("isJumping", numJump >= 1);
 
+            // 仮:下方向の入力で素早く降下する
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
+            }
+
             // Fキー(仮)で攻撃
             if (Input.GetKeyDown(KEY_ATTACK))
             {
