@@ -33,6 +33,8 @@ public class PlayerController : ConfigChara
     private const float VELOCITY_COEFF_FORWARD = 0.5f;
     private const float VELOCITY_COEFF_BACKWARD = 1.2f;
 
+    float num;
+    
     //private bool isJumping = false;
     public int numJump; // 現在ジャンプしている回数(0: 着地中)
 
@@ -47,8 +49,22 @@ public class PlayerController : ConfigChara
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.O)){
+            if (Time.timeScale > 0)
+            {
+                //num = block_speed_relative;
+                //block_speed_relative = 0;
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+
+        }
+
         // ゲームオーバー時処理を止める
-        if (!is_game_over && isMoveable)
+            if (!is_game_over && isMoveable)
         {
             // 方向キーで横移動
             //if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
