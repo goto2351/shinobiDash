@@ -47,6 +47,8 @@ public class Config : MonoBehaviour
     public static bool is_generate_base_block;
     // ƒuƒƒbƒNˆÚ“®‘¬“x‚Ì”{—¦
     public static float block_speed_relative;
+    // BGM, SE‚Ì‰¹—Ê‚ÉŠ|‚¯‚éŒW”
+    public static float volumeCoeff = 1.0f;
 
     // static•Ï”‚Ì‰Šú‰»
     public void Initialize()

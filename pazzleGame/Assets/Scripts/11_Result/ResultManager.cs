@@ -25,8 +25,9 @@ public class ResultManager : Config
     // 「結果をツイート」ボタンを押したときにTwitter投稿リンクを開く
     public void OpenTweetSubmitForm()
     {
-        string tweetText = "ツイートテスト 結果: " + current_distance + " km";
-        var URL = new System.Uri("https://twitter.com/intent/tweet?text=" + tweetText);
+        string tweetText = "ツイートテスト 結果: " + System.Math.Round(current_distance, 2) + " km";
+        string linkURL = "https://www.yahoo.co.jp/";
+        var URL = new System.Uri("https://twitter.com/intent/tweet?text=" + tweetText + "&url=" + linkURL);
         //Debug.Log(URL.AbsoluteUri);
         OpenNewTab(URL.AbsoluteUri);
 
