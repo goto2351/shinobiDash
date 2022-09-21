@@ -78,13 +78,18 @@ public class EnemyTouch : ConfigChara
             // 重複回復を防ぐためのフラグチェック
             if (!IsHealed)
             {
-                IsHealed = true;
-                // SE再生
-                se.SEHeal();
-                // PLのライフ回復
-                current_life++;
-                // 一定時間後に再度回復判定を有効化
-                Invoke(nameof(CancelHealed), HealedTime);
+                // 体力上限は9とする
+                if (current_life < 9)
+                {
+                    IsHealed = true;
+                    // SE再生
+                    se.SEHeal();
+                    // PLのライフ回復
+                    current_life++;
+                    // 一定時間後に再度回復判定を有効化
+                    Invoke(nameof(CancelHealed), HealedTime);
+                }
+
             }
 
         }

@@ -49,22 +49,8 @@ public class PlayerController : ConfigChara
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O)){
-            if (Time.timeScale > 0)
-            {
-                //num = block_speed_relative;
-                //block_speed_relative = 0;
-                Time.timeScale = 0;
-            }
-            else
-            {
-                Time.timeScale = 1;
-            }
-
-        }
-
-        // ゲームオーバー時処理を止める
-            if (!is_game_over && isMoveable)
+        // ゲームオーバー、ポーズ時処理を止める
+        if (!is_game_over && !is_pause && isMoveable)
         {
             // 方向キーで横移動
             //if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
