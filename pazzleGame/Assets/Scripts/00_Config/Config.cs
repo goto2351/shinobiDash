@@ -41,8 +41,10 @@ public class Config : MonoBehaviour
     public static float can_construct_line;
     // ゲームオーバーフラグ
     public static bool is_game_over;
-     // 最後のBaseブロックの生成位置
-     public static float last_base_block_point;
+    // ポーズフラグ
+    public static bool is_pause;
+    // 最後のBaseブロックの生成位置
+    public static float last_base_block_point;
     // Baseブロックの生成フラグ
     public static bool is_generate_base_block;
     // ブロック移動速度の倍率
@@ -57,6 +59,7 @@ public class Config : MonoBehaviour
         current_life = 3;
         can_construct_line = 0f;
         is_game_over = false;
+        is_pause = false;
         last_base_block_point = 0f;
         is_generate_base_block = false;
         block_speed_relative = 1.0f;
