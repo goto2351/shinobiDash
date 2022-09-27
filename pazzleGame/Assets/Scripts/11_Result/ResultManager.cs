@@ -25,8 +25,8 @@ public class ResultManager : Config
     // 「結果をツイート」ボタンを押したときにTwitter投稿リンクを開く
     public void OpenTweetSubmitForm()
     {
-        string tweetText = "ツイートテスト 結果: " + System.Math.Round(current_distance, 2) + " km";
-        string linkURL = "https://www.google.com/?hl=ja";
+        string tweetText = "忍ダッシュ！で  " + System.Math.Round(current_distance, 2) + " km走りました！";
+        string linkURL = "https://goto2351.github.io/shinobiDash_play/";
         var URL = new System.Uri("https://twitter.com/intent/tweet?text=" + tweetText + "&url=" + linkURL);
         //Debug.Log(URL.AbsoluteUri);
         OpenNewTab(URL.AbsoluteUri);
